@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "06e0558b-140d-ae90-32db-f6d8e4e15d97",
+		"name": "IESEG - Recommendation System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "calculateScore",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"userId\": 133,\n\t\t\"movieId\": 463\n\t},\n\t{\n\t\t\"userId\": 133,\n\t\t\"movieId\": 471\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:6000/ratings/calculateScore",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "6000",
+					"path": [
+						"ratings",
+						"calculateScore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top_ratings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": 10,\n\t\"count\": 5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6000/ratings/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"ratings",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+				{
+			"name": "top_five_ratings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t{\n\t\t\"UserID\": 2,\n\t\t\"ArtistName\": 463\n\t},\n\t{\n\t\t\"UserID\": 2,\n\t\t\"ArtistName\": 471\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6000/ratings/topfive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"ratings",
+						"topfive"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
